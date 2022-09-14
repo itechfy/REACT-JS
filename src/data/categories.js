@@ -2,7 +2,7 @@ const categories = [
     {
        id:1,
        title:'Hats',
-       imageURL :'https://images.unsplash.com/photo-1518061124653-4b85d51931f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
+       imageURL :'https://images.pexels.com/photos/396777/pexels-photo-396777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
        id:2,
@@ -12,7 +12,7 @@ const categories = [
     {
        id:3,
        title:'Sneakers',
-       imageURL :'https://images.unsplash.com/photo-1612181346599-a6bfbd67be86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+       imageURL :'https://images.pexels.com/photos/1456706/pexels-photo-1456706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
        id:4,
@@ -22,7 +22,7 @@ const categories = [
     {
        id:5,
        title:'Men',
-       imageURL :'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+       imageURL :'https://images.pexels.com/photos/1639729/pexels-photo-1639729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
 ];
 export default categories;
