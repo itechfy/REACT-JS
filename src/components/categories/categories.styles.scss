@@ -16,10 +16,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 80vh;
+    max-height: 500px;
     line-height: 1px;
   }
-.animated-gif{
-  width: 200px;
-  height: 200px;
+.gif{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background:no-repeat center/100% url('../../assets/giphy.gif');
+  z-index: -1;
 }

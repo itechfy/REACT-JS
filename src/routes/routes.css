@@ -1,0 +1,18 @@
+.google-signin{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    column-gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    transition:0.3s ease;
+}
+.google-signin:hover{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
+.google-signin:focus{
+    background-color: #ffffff;
+}

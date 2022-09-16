@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
 import {ReactComponent as NikeLogo} from '../../assets/icons8-nike.svg';
+import { ReactComponent as UserIcon } from '../../assets/icons/signin-ico.svg';
 import './navbar.styles.scss';
 const Navigation = ()=>{
     return(
@@ -14,6 +15,9 @@ const Navigation = ()=>{
             <div className="nav-links-container">
               <Link className="nav-link" to='/'>HOME</Link>
               <Link className="nav-link" to='/shop'>SHOP</Link>
+              <Link className="nav-link" to='/sign-in'>
+                <UserIcon/>
+              </Link>
             </div>
 
         </div>

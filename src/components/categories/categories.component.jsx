@@ -6,9 +6,7 @@ const Categories = ({categories})=>{
             <div className='hero'>
             <h1 className='landing-title'>Welcome to Nike</h1>
             <p>Bringing you the elite fashion outlets to nail out there. </p>
-            <div style={{
-                backgroundImage:`url('../../assets/icons8-nike.svg')`
-            }}>
+            <div className='gif'>
             </div>
             </div>
         <div className="categories-container">
