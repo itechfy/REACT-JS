@@ -26,7 +26,6 @@ const SignIn = ()=>{
 
     return(
         <div>
-            <h1>Welcome to Sign in Page</h1>
             <SignUpForm/>
             <button className='google-signin' onClick={loginWithGoogle}>
             <img src={require("../assets/icons/google-signin-logo.png")} width="35px" alt="" />
