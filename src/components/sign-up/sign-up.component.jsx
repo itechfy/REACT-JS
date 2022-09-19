@@ -19,7 +19,10 @@ const SignUpForm = ()=>{
     const ShowError= (value)=>{
             document.getElementById('error-box').innerHTML = value;
     }
-
+    //clear form function
+    const ResetForm = ()=>{
+        setFormFields(defaultFormFields);
+    }
     const handleSubmit = async (event) =>{
         event.preventDefault();
         if(Password!=ConfirmPassword)
@@ -32,6 +35,8 @@ const SignUpForm = ()=>{
             const {user}=await createAuthUserWithEmailAndPassword(Email,Password);
          //   console.log(user);
             createUserDocumentFromAuth(user,{displayName});
+
+            ResetForm();
 
         } catch (error) {
             if( error.code === 'auth/email-already-in-use'){
@@ -57,7 +62,7 @@ const SignUpForm = ()=>{
              
                 <FormInput label={"Email"} type="email" id="_email" name="Email" onChange={handleChange} value={Email} required />
                
-                <FormInput label={"Password"} type="password" id="pass" name="Password" onChange={handleChange} value={Password} required />
+                <FormInput label={"Password"} type="password" id="_pass" name="Password" onChange={handleChange} value={Password} required />
            
                 <FormInput label={"Confirm Password"} type="password" id="c-pass" name="ConfirmPassword" onChange={handleChange} value={ConfirmPassword} required />
 
