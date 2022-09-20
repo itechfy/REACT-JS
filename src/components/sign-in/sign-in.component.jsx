@@ -33,7 +33,7 @@ const SignInForm = () => {
         Password
       );
       // context to save user object
-      setCurrentUser(user);
+      //setCurrentUser(user);
 
       ResetForm();
     } catch (error) {

@@ -1,32 +1,33 @@
-.google-signin{
-    display: flex;
-    align-items: center;
-    background-color: white;
-    column-gap: 10px;
-    font-size: 16px;
-    width: 100%;
-    font-weight: 700;
-    padding: 0.5em 1em;
-    transition:0.3s ease;
+.google-signin {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  column-gap: 10px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  transition: 0.3s ease;
 }
-.google-signin:hover{
-    background-color: black;
-    cursor: pointer;
-    color: white;
+.google-signin:hover {
+  background-color: black;
+  cursor: pointer;
+  color: white;
 }
-.google-signin:focus{
-    background-color: #ffffff;
+.google-signin:focus {
+  background-color: #ffffff;
 }
-.auth-container{
-    display: flex;
-    max-width: 700px;
-    gap: 100px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 30px auto;
+.auth-container {
+  display: flex;
+  max-width: 700px;
+  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px auto;
+  padding: 2rem;
 }
-.or{
-    display: block;
-    text-align: center;
-    padding: 30px 0;
+.or {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
 }

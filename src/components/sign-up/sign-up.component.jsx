@@ -43,7 +43,8 @@ const SignUpForm = () => {
         Password
       );
       // console.log(user);
-      setCurrentUser(user);
+      // context tto store user
+      //  setCurrentUser(user);
       createUserDocumentFromAuth(user, { displayName });
 
       ResetForm();
