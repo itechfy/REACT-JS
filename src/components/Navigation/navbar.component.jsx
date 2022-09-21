@@ -8,12 +8,8 @@ import { SignOutUser } from "../../utils/firebase/firebase.utils";
 import "./navbar.styles.scss";
 const Navigation = () => {
   // this will retrieve stored user object
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   //console.log(currentUser);
-  const SignOutHandler = async () => {
-    const response = await SignOutUser();
-    setCurrentUser(null);
-  };
   return (
     <Fragment>
       <div className="navigation">
@@ -30,7 +26,7 @@ const Navigation = () => {
           </Link>
           {currentUser !== null ? (
             <div className="nav-link">
-              <Link className="nav-link" to="/shop">
+              <Link className="nav-link pic-link" to="/shop">
                 <div
                   className="round-pic"
                   style={{
@@ -39,10 +35,13 @@ const Navigation = () => {
                     backgroundSize: `150%`,
                     backgroundRepeat: `no-repeat`,
                   }}
-                  onClick={SignOutHandler}
+                  onClick={``}
                 ></div>
+                <Link className="signout-ico" onClick={SignOutUser}>
+                  Logout &nbsp;
+                  <SignOutIcon />
+                </Link>
               </Link>
-              <SignOutIcon onClick={SignOutHandler} />
             </div>
           ) : (
             <Link className="nav-link" to="/auth">

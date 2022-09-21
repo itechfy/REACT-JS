@@ -1,8 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import FormInput from "../input-field/input-field.component";
 import "./sign-in-form.styles.scss";
 import Button from "../button/button.component";
-import { UserContext } from "../../contexts/user.context";
 import { SignInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 const defaultFormFields = {
   Email: "",
@@ -14,7 +13,7 @@ const SignInForm = () => {
   //destructuring form fields from default form fields
   const { Email, Password } = formFields;
   // using userContext
-  const { setCurrentUser } = useContext(UserContext);
+  //const { setCurrentUser } = useContext(UserContext);
   //input validator
   const ShowError = (value) => {
     document.getElementById("error-box").innerHTML = value;

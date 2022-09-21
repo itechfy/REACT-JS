@@ -1,5 +1,4 @@
-import { useState, useContext } from "react";
-import { UserContext } from "../../contexts/user.context";
+import { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -21,7 +20,7 @@ const SignUpForm = () => {
 
   // using userContext values
 
-  const { setCurrentUser } = useContext(UserContext);
+  //const { setCurrentUser } = useContext(UserContext);
 
   //input validator
   const ShowError = (value) => {
@@ -43,7 +42,7 @@ const SignUpForm = () => {
         Password
       );
       // console.log(user);
-      // context tto store user
+      // context to store user
       //  setCurrentUser(user);
       createUserDocumentFromAuth(user, { displayName });
 

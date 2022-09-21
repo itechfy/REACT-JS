@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { createContext, useState } from "react";
-import {
-  onAuthStateChangedListener,
-  SignOutUser,
-} from "../utils/firebase/firebase.utils";
+import { onAuthStateChangedListener } from "../utils/firebase/firebase.utils";
 
 // context is used to store data
 // It acts like a storage
@@ -21,9 +18,7 @@ export const UserProvider = ({ children }) => {
   //SignOutUser();
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
-      console.log(user);
-      //re-run when unmounts
-      return unsubscribe;
+      setCurrentUser(user);
     });
   }, []);
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
