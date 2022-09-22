@@ -1,0 +1,32 @@
+.cart-dropdown-container {
+  position: absolute;
+  width: 240px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  box-shadow: -1px 20px 30px 20px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 20px 30px 20px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -1px 20px 30px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  top: 90px;
+  right: 20px;
+  z-index: 5;
+
+  .empty-message {
+    font-size: 18px;
+    margin: 50px auto;
+  }
+
+  .cart-items {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  button {
+    margin-top: auto;
+  }
+}

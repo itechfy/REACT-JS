@@ -4,11 +4,16 @@ import { ReactComponent as NikeLogo } from "../../assets/icons8-nike.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/signin-ico.svg";
 import { ReactComponent as SignOutIcon } from "../../assets/icons/signout-ico.svg";
 import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
 import { SignOutUser } from "../../utils/firebase/firebase.utils";
+import Cart from "../cart/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import "./navbar.styles.scss";
+
 const Navigation = () => {
   // this will retrieve stored user object
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
   //console.log(currentUser);
   return (
     <Fragment>
@@ -48,8 +53,11 @@ const Navigation = () => {
               <UserIcon />
             </Link>
           )}
+          <Cart />
         </div>
+        {isCartOpen && <CartDropdown />}
       </div>
+
       <Outlet />
     </Fragment>
   );

@@ -1,14 +1,15 @@
-body{
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
-a{
-    text-decoration: none;
-    color:#727272;
-    font-weight: 600;
-    transition:color 0.4s ease;
+a {
+  text-decoration: none;
+  color: #727272;
+  font-weight: 600;
+  transition: color 0.4s ease;
 }
-a:hover{
-    color:#000000;
+a:hover {
+  color: #000000;
 }
