@@ -7,13 +7,14 @@ import Authentication from "./routes/Authentication.component";
 import Shop from "./routes/Shop/Shop.component";
 import _404 from "./components/error/404.component";
 import Profile from "./routes/Profile/profile.component";
+import CheckoutPage from "./routes/checkout/checkout.component";
 import { UserContext } from "./contexts/user.context";
 
 const App = () => {
   const { currentUser } = useContext(UserContext);
   const location = useLocation();
   // const navigate = useNavigate();
-  console.log(currentUser);
+  //console.log(currentUser);
   // if (currentUser !== null)
   //   if (location.pathname === "/auth") window.location.replace("/");
 
@@ -27,6 +28,7 @@ const App = () => {
 
         <Route path="404" element={<_404 />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="checkout" element={<CheckoutPage />} />
 
         <Route
           path="auth"
