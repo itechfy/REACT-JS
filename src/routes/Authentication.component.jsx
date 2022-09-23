@@ -19,7 +19,7 @@ const Authentication = () => {
       const response = await getRedirectResult(auth);
       if (response) {
         const userDocRef = await createUserDocumentFromAuth(response.user);
-        console.log(userDocRef);
+        // console.log(userDocRef);
       }
     }
     RedirectedData();
@@ -28,7 +28,7 @@ const Authentication = () => {
   const loginWithGoogle = async () => {
     // const response=await signInWithGooglePopup();
     const { user } = await signInWithGooglePopup();
-    console.log(user);
+    // console.log(user);
     setCurrentUser(user);
 
     const userDocRef = await createUserDocumentFromAuth(user);

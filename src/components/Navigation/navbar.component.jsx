@@ -14,6 +14,7 @@ const Navigation = () => {
   // this will retrieve stored user object
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
+
   //console.log(currentUser);
   return (
     <Fragment>
@@ -31,16 +32,17 @@ const Navigation = () => {
           </Link>
           {currentUser !== null ? (
             <div className="nav-link">
-              <Link className="nav-link pic-link" to="/shop">
+              <Link className="nav-link pic-link" to="/Profile">
                 <div
                   className="round-pic"
                   style={{
-                    backgroundImage: `url("https://images.unsplash.com/photo-1538805232509-99227eeb8c62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")`,
+                    backgroundImage: `url(${currentUser.photoURL})`,
                     backgroundPosition: `center`,
                     backgroundSize: `150%`,
                     backgroundRepeat: `no-repeat`,
+                    backgroundColor: `#DFDFDF`,
                   }}
-                  onClick={``}
+                  onClick={() => {}}
                 ></div>
                 <Link className="signout-ico" onClick={SignOutUser}>
                   Logout &nbsp;
