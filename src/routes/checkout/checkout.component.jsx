@@ -6,8 +6,8 @@ import Hero from "../../components/hero/hero.component";
 import "./checkout.styles.scss";
 
 const CheckoutPage = () => {
-  const { cartItems } = useContext(CartContext);
-
+  const { cartItems, totalPrice } = useContext(CartContext);
+  console.log(cartItems[0]);
   return cartItems.length > 0 ? (
     <div className="checkout-container">
       <div className="checkout-header">
@@ -31,7 +31,7 @@ const CheckoutPage = () => {
       {cartItems.map((item) => (
         <CheckoutItem key={item.id} cartItem={item} />
       ))}
-      <span className="total">Total : 0</span>
+      <span className="total">Total : {totalPrice}</span>
     </div>
   ) : (
     <Hero title="No items in cart" sub_title=""></Hero>
