@@ -1,5 +1,5 @@
 import { ProductsContext } from "../../contexts/products.context";
-import ProductCard from "../../components/product-card/product-card.component";
+import CategoryPreview from "../../components/category-preview/category-preview.component";
 import Hero from "../../components/hero/hero.component";
 import "./Shop.styles.scss";
 import { useContext } from "react";
@@ -11,10 +11,17 @@ const Shop = () => {
         title="Shop now"
         sub_title="Shop from the variety of different collections. "
       ></Hero>
-      <div className="products-container">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div className="shop-container">
+        {Object.keys(products).map((title) => {
+          const SpecificProducts = products[title];
+          return (
+            <CategoryPreview
+              key={title}
+              title={title}
+              products={SpecificProducts}
+            />
+          );
+        })}
       </div>
     </div>
   );
