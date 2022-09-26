@@ -24,7 +24,7 @@ const App = () => {
       <Route path="/*" element={<Navigation />}>
         {/*First navigation component will be render here and then outlet/render the remaining routes*/}
         <Route index element={<Home />} />
-        <Route path="shop" element={<Shop />} />
+        <Route path="shop/*" element={<Shop />} />
 
         <Route path="404" element={<_404 />} />
         <Route path="profile" element={<Profile />} />
