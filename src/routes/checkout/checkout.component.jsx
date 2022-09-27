@@ -34,7 +34,9 @@ const CheckoutPage = () => {
       <span className="total">Total : {totalPrice}</span>
     </div>
   ) : (
-    <Hero title="No items in cart" sub_title=""></Hero>
+    <Hero title="No items in cart" sub_title="">
+      <img src={require("../../assets/bag-empty.png")} width="250" />
+    </Hero>
   );
 };
 export default CheckoutPage;

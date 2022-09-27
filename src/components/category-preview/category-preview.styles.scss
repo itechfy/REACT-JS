@@ -1,7 +1,7 @@
 .category-preview-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 
   .title {
     font-size: 28px;
@@ -15,4 +15,16 @@
     column-gap: 10px;
     row-gap: 50px;
   }
+}
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.8em;
+  margin: 0 0 5px 0;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+}
+.view-more-btn {
+  max-width: 250px;
 }
