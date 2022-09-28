@@ -12,7 +12,7 @@ const CartItem = ({ cartItem }) => {
       <div className="item-details">
         <span className="name">{name}</span>
         <span>
-          {quantity} X {price}
+          {quantity} x {price}
         </span>
       </div>
       <div className="remove-button" onClick={() => removeItemofCart(cartItem)}>

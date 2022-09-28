@@ -14,10 +14,30 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 10px 0 10px 20px;
+    line-height: 1.3em;
 
     .name {
-      font-size: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      display: block;
+      width: 110px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .remove-button {
+    background-color: #dfdfdf;
+    height: fit-content;
+    padding: 0.2em 0.4em;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 400;
+
+    &:hover {
+      background-color: #b1b1b1;
+      cursor: pointer;
     }
   }
 }
