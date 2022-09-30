@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { createContext, useReducer } from "react";
-import { onAuthStateChangedListener } from "../utils/firebase/firebase.utils";
+import { createAction } from "../utils/reducer/reducer.utils";
+import {
+  createUserDocumentFromAuth,
+  onAuthStateChangedListener,
+} from "../utils/firebase/firebase.utils";
 
 // context is used to store data
 // It acts like a storage
@@ -45,17 +49,18 @@ export const UserProvider = ({ children }) => {
   const [{ currentUser }, dispatch] = useReducer(userReducer, INITIAL_STATE);
   console.log(currentUser);
   const setCurrentUser = (user) => {
-    dispatch({
-      type: USER_ACTION_TYPES.SET_CURRENT_USER,
-      payload: user,
-    });
+    dispatch(createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user));
   };
 
   //SignOutUser();
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user);
+      }
       setCurrentUser(user);
     });
+    return unsubscribe;
   }, []);
 
   const value = { currentUser, setCurrentUser };

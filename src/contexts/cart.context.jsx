@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { createContext, useReducer, useState } from "react";
+import { createAction } from "../utils/reducer/reducer.utils";
 
 const addCartItem = (cartItems, product) => {
   const existingCartItem = cartItems.find(
@@ -87,7 +88,7 @@ const CartReducer = (state, action) => {
     case CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART:
     case CART_ACTIONS_TYPES.REMOVE_ITEM:
       return {
-        ...state,
+        ...state, // next standup ( what happens when write it after cartItems)
         cartItems: payload,
       };
     case CART_ACTIONS_TYPES.SET_CART_COUNT:
@@ -130,39 +131,39 @@ export const CartProvider = ({ children }) => {
       0
     );
 
-    dispatch({
-      type: CART_ACTIONS_TYPES.SET_CART_COUNT,
-      payload: newtotal,
-    });
+    dispatch(createAction(CART_ACTIONS_TYPES.SET_CART_COUNT, newtotal));
 
     //counting total price
     const netPrice = cartItems.reduce(
       (total, cartItem) => total + cartItem.quantity * cartItem.price,
       0
     );
-    dispatch({
-      type: CART_ACTIONS_TYPES.SET_TOTAL_PRICE,
-      payload: netPrice,
-    });
+    dispatch(createAction(CART_ACTIONS_TYPES.SET_TOTAL_PRICE, netPrice));
   }, [cartItems, cartCount, totalPrice]);
 
   const addItemtoCart = (product) => {
-    dispatch({
-      type: CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART,
-      payload: addCartItem(cartItems, product),
-    });
+    dispatch(
+      createAction(
+        CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART,
+        addCartItem(cartItems, product)
+      )
+    );
   };
   const removeItemfromCart = (product) => {
-    dispatch({
-      type: CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART,
-      payload: removeCartItem(cartItems, product),
-    });
+    dispatch(
+      createAction(
+        CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART,
+        removeCartItem(cartItems, product)
+      )
+    );
   };
   const removeItemofCart = (product) => {
-    dispatch({
-      type: CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART,
-      payload: removeItem(cartItems, product),
-    });
+    dispatch(
+      createAction(
+        CART_ACTIONS_TYPES.REMOVE_ITEM_FROM_CART,
+        removeItem(cartItems, product)
+      )
+    );
   };
 
   const value = {
