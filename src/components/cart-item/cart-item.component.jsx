@@ -1,11 +1,11 @@
 import "./cart-item.styles.scss";
-import { useContext } from "react";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
-import { CartContext } from "../../contexts/cart.context";
+import { RemoveItem } from "../../store/cart/cart.actions";
+import { useDispatch } from "react-redux";
 
-const CartItem = ({ cartItem }) => {
-  const { removeItemofCart } = useContext(CartContext);
+const CartItem = ({ cartItems, cartItem }) => {
   const { imageUrl, name, quantity, price } = cartItem;
+  const dispatch = useDispatch();
+
   return (
     <div className="cart-item-container">
       <img src={imageUrl} />
@@ -15,7 +15,10 @@ const CartItem = ({ cartItem }) => {
           {quantity} x {price}
         </span>
       </div>
-      <div className="remove-button" onClick={() => removeItemofCart(cartItem)}>
+      <div
+        className="remove-button"
+        onClick={() => dispatch(RemoveItem(cartItems, cartItem))}
+      >
         &#10005;
       </div>
     </div>

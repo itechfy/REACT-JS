@@ -1,11 +1,12 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
 } from "./utils/firebase/firebase.utils";
 import { setCurrentUser } from "./store/user/user.actions";
+import { selectCurrentUser } from "./store/user/user.selector";
 
 import Home from "./routes/home.component";
 import Navigation from "./components/Navigation/navbar.component";
@@ -14,11 +15,12 @@ import Shop from "./routes/Shop/Shop.component";
 import _404 from "./components/error/404.component";
 import Profile from "./routes/Profile/profile.component";
 import CheckoutPage from "./routes/checkout/checkout.component";
+
 //import { UserContext } from "./contexts/user.context";
 
 const App = () => {
   // const { currentUser } = useContext(UserContext);
-  const currentUser = null;
+  const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   const location = useLocation();
   // const navigate = useNavigate();
@@ -51,7 +53,7 @@ const App = () => {
         <Route
           path="auth"
           element={
-            currentUser ? (
+            currentUser !== null ? (
               <Navigate to="/" state={{ from: location }} />
             ) : (
               <Authentication />

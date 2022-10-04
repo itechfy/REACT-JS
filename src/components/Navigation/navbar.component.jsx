@@ -1,18 +1,19 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { ReactComponent as NikeLogo } from "../../assets/icons8-nike.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/signin-ico.svg";
 import { ReactComponent as SignOutIcon } from "../../assets/icons/signout-ico.svg";
-import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 import { SignOutUser } from "../../utils/firebase/firebase.utils";
 import Cart from "../cart/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import { selectCurrentUser } from "../../store/user/user.selector";
 import "./navbar.styles.scss";
 
 const Navigation = () => {
   // this will retrieve stored user object
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
   const { isCartOpen } = useContext(CartContext);
 
   //console.log(currentUser);
@@ -30,7 +31,7 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
-          {currentUser !== null ? (
+          {currentUser ? (
             <div className="nav-link">
               <Link className="nav-link pic-link" to="/Profile">
                 <div
@@ -44,10 +45,10 @@ const Navigation = () => {
                   }}
                   onClick={() => {}}
                 ></div>
-                <Link className="signout-ico" onClick={SignOutUser}>
+                <span className="signout-ico" onClick={SignOutUser}>
                   Logout &nbsp;
                   <SignOutIcon />
-                </Link>
+                </span>
               </Link>
             </div>
           ) : (

@@ -17,6 +17,7 @@ export const ProductsProvider = ({ children }) => {
     };
     getCategoriesMap();
   }, []);
+
   return (
     <ProductsContext.Provider value={value}>
       {children}
