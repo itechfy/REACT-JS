@@ -18,3 +18,10 @@ export const SelectProducts = createSelector([selectCategories], (products) =>
     return acc;
   }, {})
 );
+
+/// Loading Selector ////
+
+export const SelectLoadingState = createSelector(
+  [selectProductsReducer],
+  (categoriesSlice) => categoriesSlice.isLoading
+);
